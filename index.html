@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Color Compare</title>
+    <style>
+        #back {
+            background-color: #ffffff;
+        }
+
+        #font {
+            color: #000000;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateY(-50%) translateX(-50%);
+            -webkit-transform: translateY(-50%) translateX(-50%);
+        }
+    </style>
+</head>
+
+<body id="back">
+    <form>
+        <p>Background:<br>
+            <input type="text" id="back_color_input" /></p>
+
+        <p>Font:<br>
+            <input type="text" id="font_color_input" /></p>
+
+        <button type="button" onclick="colorChange();">Change</button>
+    </form>
+    <div class="center">
+        <h1 id="font">SAMPLE</h1>
+    </div>
+
+    <script>
+        function colorChange() {
+            var targetBack = document.getElementById("back");
+            var targetFont = document.getElementById("font");
+
+            var newBackColor = document.getElementById("back_color_input").value;
+            var newFontColor = document.getElementById("font_color_input").value;
+
+            targetBack.style.backgroundColor = "#" + newBackColor;
+            targetFont.style.color = "#" + newFontColor;
+        }
+    </script>
+
+</body>
+
+</html>
